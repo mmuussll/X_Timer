@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق البومدور - إدارة الوقت والمهام</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clock"></i> تطبيق البومدور</h1>
+            <p>نظام إدارة الوقت والمهام</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Timer Section -->
+            <div class="timer-section">
+                <div class="timer-card">
+                    <div class="timer-display">
+                        <div class="time" id="timeDisplay">25:00</div>
+                        <div class="session-type" id="sessionType">جلسة عمل</div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="startBtn" class="btn btn-primary">
+                            <i class="fas fa-play"></i> ابدأ
+                        </button>
+                        <button id="pauseBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-pause"></i> توقف
+                        </button>
+                        <button id="resetBtn" class="btn btn-outline">
+                            <i class="fas fa-redo"></i> إعادة تعيين
+                        </button>
+                    </div>
+
+                    <div class="session-settings">
+                        <div class="setting-group">
+                            <label>وقت العمل (دقيقة):</label>
+                            <input type="number" id="workTime" value="25" min="1" max="60">
+                        </div>
+                        <div class="setting-group">
+                            <label>وقت الراحة (دقيقة):</label>
+                            <input type="number" id="breakTime" value="5" min="1" max="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-section">
+                <h2><i class="fas fa-chart-bar"></i> الإحصائيات اليومية</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon work-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="studyTime">0</div>
+                            <div class="stat-label">دقائق الدراسة</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon break-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="breakTimeStats">0</div>
+                            <div class="stat-label">دقائق الراحة</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon sessions-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="completedSessions">0</div>
+                            <div class="stat-label">جلسات مكتملة</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon tasks-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="completedTasks">0</div>
+                            <div class="stat-label">مهام مكتملة</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks Section -->
+            <div class="tasks-section">
+                <h2><i class="fas fa-list-check"></i> إدارة المهام</h2>
+
+                <div class="task-input">
+                    <input type="text" id="taskInput" placeholder="أضف مهمة جديدة...">
+                    <button id="addTaskBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> إضافة
+                    </button>
+                </div>
+
+                <div class="tasks-container">
+                    <div class="task-filters">
+                        <button class="filter-btn active" data-filter="all">الكل</button>
+                        <button class="filter-btn" data-filter="pending">قيد التنفيذ</button>
+                        <button class="filter-btn" data-filter="completed">مكتملة</button>
+                    </div>
+
+                    <div class="task-list" id="taskList">
+                        <!-- Tasks will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">جاهز للبدء</div>
+        </div>
+    </div>
+
+    <!-- Notification Sound -->
+    <audio id="notificationSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+TuUy4FL3bI7+OGLA==" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
