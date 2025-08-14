@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X_Timer - لوحة التحكم</title>
+    <link rel="icon" href="hi.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="theme-toggle-btn">🌙</button>
+            <div class="logo">X_Timer</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="dashboard.html">لوحة التحكم</a></li>
+                <li><a href="tools.html">أدوات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <h1>لوحة التحكم</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card main-stat">
+                <h3>إجمالي وقت التركيز</h3>
+                <p id="total-time">0 <span>دقيقة</span></p>
+            </div>
+            <div class="stat-card">
+                <h3>🎯 إجمالي الجلسات</h3>
+                <p id="total-sessions">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>📈 متوسط الجلسات اليومي</h3>
+                <p id="avg-sessions">0</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>النشاط في آخر 7 أيام</h2>
+            <div id="last-7-days-chart" class="bar-chart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h2>النشاط في آخر 30 يومًا</h2>
+            <div id="last-30-days-chart" class="bar-chart"></div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 X_MODE. كل الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="dashboard.js?v=2.0"></script>
+</body>
+</html>

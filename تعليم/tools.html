@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X_Timer - أدوات الإنتاجية</title>
+    <link rel="icon" href="hi.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="theme-toggle-btn">🌙</button>
+            <div class="logo">X_Timer</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="dashboard.html">لوحة التحكم</a></li>
+                <li><a href="tools.html">أدوات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tools-main">
+        <h1>أدوات الإنتاجية</h1>
+
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-link active" data-tab="notebook-tab">📝 دفتر الملاحظات</button>
+                <button class="tab-link" data-tab="goals-habits-tab">🎯 الأهداف والعادات</button>
+            </div>
+
+            <!-- Notebook Tab Content -->
+            <div id="notebook-tab" class="tab-content active">
+                <div class="editor-toolbar">
+                    <button data-command="bold"><b>B</b></button>
+                    <button data-command="italic"><i>I</i></button>
+                    <button data-command="underline"><u>U</u></button>
+                    <button data-command="formatBlock" data-value="h1">H1</button>
+                    <button data-command="formatBlock" data-value="h2">H2</button>
+                    <button data-command="createLink">🔗</button>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <button id="image-upload-btn">🖼️</button>
+                </div>
+                <div id="notebook-editor" class="text-editor" contenteditable="true"></div>
+            </div>
+
+            <!-- Goals & Habits Tab Content -->
+            <div id="goals-habits-tab" class="tab-content">
+                <div class="tool-section">
+                    <h2>قائمة الأهداف</h2>
+                    <div class="goals-container">
+                        <div id="short-term-goals">
+                            <h3>أهداف قصيرة المدى</h3>
+                            <div class="goal-input-container">
+                                <input type="text" id="short-goal-input" placeholder="أضف هدفًا...">
+                                <button id="add-short-goal-btn">أضف</button>
+                            </div>
+                            <ul id="short-goal-list" class="goal-list"></ul>
+                        </div>
+                        <div id="long-term-goals">
+                            <h3>أهداف طويلة المدى</h3>
+                            <div class="goal-input-container">
+                                <input type="text" id="long-goal-input" placeholder="أضف هدفًا...">
+                                <button id="add-long-goal-btn">أضف</button>
+                            </div>
+                            <ul id="long-goal-list" class="goal-list"></ul>
+                        </div>
+                    </div>
+                </section>
+                <div class="tool-section">
+                    <h2>متتبع العادات</h2>
+                    <div id="habit-tracker-container">
+                        <div id="habit-tracker"></div>
+                        <div class="habit-input-container">
+                            <input type="text" id="habit-input" placeholder="أضف عادة جديدة...">
+                            <button id="add-habit-btn">أضف عادة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 X_MODE. كل الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="tools.js?v=2.0"></script>
+</body>
+</html>
